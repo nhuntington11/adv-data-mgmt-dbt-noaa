@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 with all_year_lightning_strikes as (
     select * from `bigquery-public-data`.noaa_lightning.lightning_1987
     
