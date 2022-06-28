@@ -24,6 +24,10 @@ with all_year_lightning_strikes as (
     union all
 
     select * from `bigquery-public-data`.noaa_lightning.lightning_1993
+
+    union all
+
+    select * from `bigquery-public-data`.noaa_lightning.lightning_1994
 )
 
 select * from all_year_lightning_strikes
