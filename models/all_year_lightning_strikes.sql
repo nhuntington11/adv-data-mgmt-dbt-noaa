@@ -34,6 +34,16 @@ with all_year_lightning_strikes as (
     union all
 
     select * from `bigquery-public-data`.noaa_lightning.lightning_1994
+),
+
+final as (
+    select
+        sum(number_of_strikes) as sum_strikes,
+        date
+    from
+        all_year_lightning_strikes
+    group by
+        date
 )
 
-select * from all_year_lightning_strikes
+select * from final
